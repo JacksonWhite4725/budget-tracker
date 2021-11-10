@@ -10,7 +10,7 @@ request.onupgradeneeded = function(e) {
   const newVersion = e.newVersion || db.version;
   db = e.target.result;
   if (db.objectStoreNames.length === 0) {
-    db.createObjectStore('BudgetStore', { autoincrement: true });
+    db.createObjectStore('BudgetStore', { keyPath: "id", autoIncrement: true });
   }
 };
 
